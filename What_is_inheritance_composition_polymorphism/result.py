@@ -249,7 +249,7 @@ class Rectangle(RectangleATD, Polygon):
         return True
 
     def _calculate_center(
-        sef, left_up_point: PointATD, right_bottom_point: PointATD
+        self, left_up_point: PointATD, right_bottom_point: PointATD
     ) -> PointATD:
         return Point(
             (left_up_point.x + right_bottom_point.x) / 2,
@@ -258,7 +258,7 @@ class Rectangle(RectangleATD, Polygon):
 
 
 # Наследование, полиморфизм
-class Square(SquareATD, Rectangle):
+class Square(Rectangle, SquareATD):
 
     def __init__(self, vertexes: Sequence[PointATD]):
         if len(vertexes) != 4:
