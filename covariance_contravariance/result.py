@@ -39,20 +39,16 @@ def puppy_action(puppy: Puppy) -> None:
 
 
 animal_action(Animal())
-animal_action(
-    Dog()
-)  # Действия применимые к dog, могут быть применены к animal.
-animal_action(
-    Puppy()
-)  # Действия применимые к puppy, могут быть применены к animal.
+animal_action(Dog())
+animal_action(Puppy())
 
 dog_action(
     Animal()
-)  # Так нельзя, действия применимые к dog, не могут быть применимы к animal.
+)  # Так нельзя, действия применимые к dog, не могут быть применимы к предку animal.
 dog_action(Dog())
-dog_action(Puppy())  # действия применимые к puppy, могут быть применимы к dog.
+dog_action(Puppy())
 
 puppy_action(Puppy())
 puppy_action(
     Dog()
-)  # Так нельзя, действия применимые к puppy, не могут быть применимы к dog.
+)  # Так нельзя, действия применимые к puppy, не могут быть применимы к предку dog.
